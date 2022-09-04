@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longday.toolstudy.mapper.FdUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.longday.toolstudy.domain.FdUser">
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+            <result property="userEmail" column="user_email" jdbcType="VARCHAR"/>
+            <result property="userStatus" column="user_status" jdbcType="CHAR"/>
+            <result property="userPhonenumber" column="user_phonenumber" jdbcType="VARCHAR"/>
+            <result property="userSex" column="user_sex" jdbcType="CHAR"/>
+            <result property="userType" column="user_type" jdbcType="CHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="delFlag" column="del_flag" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,user_name,user_password,
+        user_email,user_status,user_phonenumber,
+        user_sex,user_type,create_time,
+        del_flag,remark
+    </sql>
+</mapper>

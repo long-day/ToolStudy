@@ -1,7 +1,8 @@
 package com.longday.toolstudy.mapper;
 
-import com.longday.toolstudy.domain.FdUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.longday.toolstudy.domain.FdUser;
+import org.springframework.stereotype.Repository;
 
 /**
 * @author 君
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2022-07-29 21:46:41
 * @Entity com.longday.toolstudy.domain.FdUser
 */
+@Repository
 public interface FdUserMapper extends BaseMapper<FdUser> {
 
 }

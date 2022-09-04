@@ -2,6 +2,7 @@ package com.longday.toolstudy.service;
 
 import com.longday.toolstudy.domain.FdFileList;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.longday.toolstudy.vo.ResponseResult;
 
 /**
 * @author 君
@@ -10,4 +11,21 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface FdFileListService extends IService<FdFileList> {
 
+    /**
+     * 上传文件
+     * @return 信息
+     */
+    ResponseResult upload();
+
+    /**
+     * 查询文件是否已存在
+     * @return boolean
+     */
+    boolean isAlreadyExists();
+
+    /**
+     * 获取文件列表
+     * @return 数据
+     */
+    ResponseResult getFilesList();
 }

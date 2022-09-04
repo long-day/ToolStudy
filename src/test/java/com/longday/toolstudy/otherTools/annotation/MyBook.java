@@ -1,6 +1,6 @@
-package com.longday.toolstudy.annotation;
+package com.longday.toolstudy.otherTools.annotation;
 
-import com.longday.toolstudy.annotation.myAnnotation.Book;
+import com.longday.toolstudy.otherTools.annotation.myAnnotation.Book;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

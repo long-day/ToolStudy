@@ -23,4 +23,17 @@
         menu_perms,create_time,del_flag,
         remark
     </sql>
+    <select id="selectPermsByUserId" resultType="java.lang.String">
+        SELECT
+            DISTINCT m.menu_name
+        FROM
+            fd_user_role ur
+                LEFT JOIN `fd_role` r ON ur.`role_id` = r.`role_id`
+                LEFT JOIN `fd_role_menu` rm ON ur.`role_id` = rm.`role_id`
+                LEFT JOIN `fd_menu` m ON m.`menu_id` = rm.`menu_id`
+        WHERE
+            user_id = 1
+          AND r.role_status = 0
+          AND m.menu_status = 0
+    </select>
 </mapper>

@@ -4,12 +4,15 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 文件列表
+ * @author 君
  * @TableName fd_file_list
  */
 @TableName(value ="fd_file_list")
@@ -54,6 +57,7 @@ public class FdFileList implements Serializable {
     /**
      * 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
 
     /**
@@ -64,6 +68,7 @@ public class FdFileList implements Serializable {
     /**
      * 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date updateTime;
 
     /**

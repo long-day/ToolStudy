@@ -1,4 +1,4 @@
-package com.longday.toolstudy.reflect;
+package com.longday.toolstudy.otherTools.reflect;
 
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +35,7 @@ public class ReflectTest {
     @Test
     public void getClassDemo3(){
         try {
-            Class<?> aClass = Class.forName("com.longday.toolstudy.reflect.Person");
+            Class<?> aClass = Class.forName("com.longday.toolstudy.otherTools.reflect.Person");
             System.out.println(aClass);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

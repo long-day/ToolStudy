@@ -1,4 +1,4 @@
-package com.longday.toolstudy.reflect;
+package com.longday.toolstudy.otherTools.reflect;
 
 /**
  * @author 君

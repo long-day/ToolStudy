@@ -1,4 +1,4 @@
-package com.longday.toolstudy.gava.utiles;
+package com.longday.toolstudy.otherTools.utiles;
 
 import org.junit.jupiter.api.Test;
 

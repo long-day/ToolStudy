@@ -1,4 +1,4 @@
-package com.longday.toolstudy.config;
+package com.longday.toolstudy.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundSetOperations;
@@ -6,12 +6,12 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
+/**
+ * @author 君
+ */
 @SuppressWarnings(value = { "unchecked", "rawtypes" })
 @Component
 public class RedisCache
@@ -83,10 +83,13 @@ public class RedisCache
     /**
      * 删除单个对象
      *
-     * @param key
+     * @param key key
      */
     public boolean deleteObject(final String key)
     {
+        if(key==null){
+            return false;
+        }
         return redisTemplate.delete(key);
     }
 
@@ -94,7 +97,7 @@ public class RedisCache
      * 删除集合对象
      *
      * @param collection 多个对象
-     * @return
+     * @return Long
      */
     public long deleteObject(final Collection collection)
     {
@@ -206,13 +209,13 @@ public class RedisCache
     /**
      * 删除Hash中的数据
      * 
-     * @param key
-     * @param hkey
+     * @param key key
+     * @param hashKey hashKey
      */
-    public void delCacheMapValue(final String key, final String hkey)
+    public void delCacheMapValue(final String key, final String hashKey)
     {
         HashOperations hashOperations = redisTemplate.opsForHash();
-        hashOperations.delete(key, hkey);
+        hashOperations.delete(key, hashKey);
     }
 
     /**
@@ -238,6 +241,3 @@ public class RedisCache
         return redisTemplate.keys(pattern);
     }
 }
-————————————————
-版权声明：本文为CSDN博主「鱼找水需要时间」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/weixin_43847283/article/details/124075302

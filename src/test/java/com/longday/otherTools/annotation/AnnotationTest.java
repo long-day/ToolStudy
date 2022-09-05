@@ -1,6 +1,6 @@
-package com.longday.toolstudy.otherTools.annotation;
+package com.longday.otherTools.annotation;
 
-import com.longday.toolstudy.otherTools.annotation.myAnnotation.Book;
+import com.longday.otherTools.annotation.myAnnotation.Book;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;

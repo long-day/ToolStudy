@@ -1,4 +1,4 @@
-package com.longday.toolstudy.otherTools.annotation.myAnnotation;
+package com.longday.otherTools.annotation.myAnnotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.longday.toolstudy.otherTools.designPatterns.principles;
+package com.longday.otherTools.designPatterns.principles;
 
 /**
  * @author 君
@@ -14,7 +14,7 @@ public class SingleResponsibilityTest {
     */
 
     //    此原则较为容易理解,就不进行示例了
-    
+
     //    小结
     /*
         1、降低类的功能复杂度

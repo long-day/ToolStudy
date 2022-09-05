@@ -1,4 +1,4 @@
-package com.longday.toolstudy.otherTools.designPatterns.principles;
+package com.longday.otherTools.designPatterns.principles;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;

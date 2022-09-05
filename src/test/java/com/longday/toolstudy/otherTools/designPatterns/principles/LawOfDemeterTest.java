@@ -12,8 +12,7 @@ public class LawOfDemeterTest {
         块的相对独立性
     */
     //    示例
-
-
+        //所有的*Factory类几乎都符合此原则。例如: ThreadFactory 和 BeanFactory等
     //    小结
     /*
        1、在类的划分上，应该创建弱耦合的类。类与类之间的耦合越弱，就越有利于实现可复用的目标。

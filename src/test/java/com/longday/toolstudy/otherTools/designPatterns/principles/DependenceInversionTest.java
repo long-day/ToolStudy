@@ -1,5 +1,7 @@
 package com.longday.toolstudy.otherTools.designPatterns.principles;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @author 君
  * @version 1.0
@@ -17,7 +19,21 @@ public class DependenceInversionTest {
 */
 
 // 示例
+    @Test
+    public void assemblingComputer(){
+        /*Computer类在设计的时候假设，直接将CPU,HardDisk,Memory这些依赖设置为实例类如：IntelCPU，
+          XiJieHardDisk,KingstonMemory等具体的实体类，那么Computer实例对象在创建时就不可以再更改使用
+          其他的组成如：AmdCPU，WesternDataDisk,GSkillMemory等,具有极大的耦合性，但是如果我们将这些
+          组成替换为一个抽象的接口:CPU，HardDisk，Memory,后，这些具体的类只需实现相关接口即可达到同样的
+          效果，使代码复用性提升，类与类之间的耦合降低。
+        */
+        IntelCPU intelCPU = new IntelCPU("酷睿i9-12900KS");
+        KingstonMemory kingstonMemory = new KingstonMemory("金士顿（Kingston）DDR5");
+        XiJieHardDisk xiJieHardDisk = new XiJieHardDisk("希捷(SEAGATE)Seagate希捷酷玩530");
+        Computer computer = new Computer(intelCPU,xiJieHardDisk,kingstonMemory);
+        computer.run();
 
+    }
     
 // 总结一下
 /*
@@ -29,4 +45,81 @@ public class DependenceInversionTest {
       对依赖的稳定性会有一定的影响.
 　　6、结合里氏替换原则使用.
 */    
+}
+
+//示例类
+class Computer{
+    private CPU cpu;
+    private  HardDisk hardDisk;
+    private  Memory memory;
+
+    public Computer(){
+
+    }
+    public Computer(CPU cpu, HardDisk hardDisk, Memory memory) {
+        this.cpu = cpu;
+        this.hardDisk = hardDisk;
+        this.memory = memory;
+    }
+
+    public void run(){
+        System.out.println("带有"+cpu+"CPU和"+hardDisk+"硬盘和"+memory+"内存的电脑正在运行！");
+    }
+}
+interface CPU{
+
+}
+
+interface HardDisk{
+
+}
+
+interface Memory{
+
+}
+
+
+class IntelCPU implements CPU{
+    private String name;
+
+    public IntelCPU(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "CPU{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+}
+
+class XiJieHardDisk implements HardDisk{
+    private String name;
+
+    public XiJieHardDisk(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "HardDisk{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+}
+
+class KingstonMemory implements Memory{
+    private String name;
+
+    public KingstonMemory(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Memory{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
